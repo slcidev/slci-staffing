@@ -4,84 +4,211 @@ body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  /* width: 40% !important; */
-  height: 300px;
+@layer components {
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    /* width: 40% !important; */
+    height: 300px;
+  }
+  
+  /* Add this in your CSS file or global styles */
+  .nav-underline-gradient {
+    position: relative;
+    /* display: inline-block; */
+  }
+  
+  .nav-underline-gradient::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(
+      to right,
+      #2563eb,
+      #16a34a
+    ); /* from-blue-600 to-green-600 */
+    transition: width 0.4s ease;
+  }
+  
+  .nav-underline-gradient:hover::after,
+  .nav-underline-gradient-active::after {
+    width: 100%;
+  }
+  
+  .brand-single-slider img {
+      width: 120px;
+      height: 50px;
+      -o-object-fit: contain;
+      object-fit: contain;
+  }
+  /* Tailwind already supports this directly */
+  .grayscale {
+    filter: grayscale(100%);
+  }
+  .grayscale-0 {
+    filter: grayscale(0%);
+  }
+  
+  
+  
+  .swiper-3d .swiper-slide-shadow-left {
+    /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); */
+    background-image: linear-gradient(
+      to Left,
+      rgba(59, 130, 246, 0.25),
+      rgba(13, 148, 136, 0)
+    ) !important;
+  }
+  
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: linear-gradient(
+      to right,
+      rgba(59, 130, 246, 0.25),
+      rgba(13, 148, 136, 0)
+    ) !important;
+    /* background-image: linear-gradient(to Right, rgba(13, 148, 136, 0.25), rgba(13, 148, 136, 0)); */
+  }
+  /* === Backgrounds === */
+  .bg-section-gradient {
+    background-image: linear-gradient(to bottom right, #f0fdfa, #eff6ff, #ecfdf5);
+  }
+
+  .bg-accent-gradient {
+    background-image: linear-gradient(to right, #2563eb, #16a34a);
+  }
+
+  .bg-card-gradient {
+    background-image: linear-gradient(to bottom right, #ffffff, #f0fdfa);
+  }
+
+  .bg-glow-blur {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 9999px;
+    filter: blur(64px);
+  }
+
+  /* === Buttons === */
+  .btn-primary {
+    background-image: linear-gradient(to right, #1d4ed8, #15803d);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    background-image: linear-gradient(to right, #1e40af, #166534);
+  }
+
+  .btn-secondary {
+    border: 1px solid #d1d5db;
+    color: #1f2937;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-secondary:hover {
+    background-color: #f3f4f6;
+  }
+
+  /* === Highlight Text === */
+  .highlight-text {
+    background-image: linear-gradient(to right, #2563eb, #16a34a);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* === Section Headings === */
+  .section-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* === Section Wrapper === */
+  .section-wrapper {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* === Icon Badge === */
+  .icon-badge {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #2563eb, #16a34a);
+    color: white;
+    transition: transform 0.3s ease;
+    margin: 0 auto 1rem;
+  }
+
+  .icon-badge:hover {
+    transform: scale(1.1);
+  }
+
+  /* === Nav Underline === */
+  .nav-underline-gradient {
+    position: relative;
+  }
+
+  .nav-underline-gradient::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-image: linear-gradient(to right, #2563eb, #16a34a);
+    transition: width 0.3s ease;
+  }
+
+  .nav-underline-gradient:hover::after {
+    width: 100%;
+  }
+
+  .nav-underline-gradient-active::after {
+    width: 100%;
+  }
 }
 
-/* Add this in your CSS file or global styles */
-.nav-underline-gradient {
-  position: relative;
-  /* display: inline-block; */
-}
-
-.nav-underline-gradient::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(
-    to right,
-    #2563eb,
-    #16a34a
-  ); /* from-blue-600 to-green-600 */
-  transition: width 0.4s ease;
-}
-
-.nav-underline-gradient:hover::after,
-.nav-underline-gradient-active::after {
-  width: 100%;
-}
-
-.brand-single-slider img {
-    width: 120px;
-    height: 50px;
-    -o-object-fit: contain;
-    object-fit: contain;
-}
-/* Tailwind already supports this directly */
-.grayscale {
-  filter: grayscale(100%);
-}
-.grayscale-0 {
-  filter: grayscale(0%);
-}
 
 
-/* .swiper-slide-card-wrapper {
-  opacity: 0.4;
-  transform: scale(0.95);
-  transition: all 0.3s ease;
-}
-
-.swiper-slide-active .swiper-slide-card-wrapper {
-  opacity: 1;
-  transform: scale(1.05);
-} */
-
-.swiper-3d .swiper-slide-shadow-left {
-  /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); */
-  background-image: linear-gradient(
-    to Left,
-    rgba(59, 130, 246, 0.25),
-    rgba(13, 148, 136, 0)
-  ) !important;
-}
-
-.swiper-3d .swiper-slide-shadow-right {
-  background-image: linear-gradient(
-    to right,
-    rgba(59, 130, 246, 0.25),
-    rgba(13, 148, 136, 0)
-  ) !important;
-  /* background-image: linear-gradient(to Right, rgba(13, 148, 136, 0.25), rgba(13, 148, 136, 0)); */
-}
 
 /* body {
 
