@@ -4,17 +4,14 @@ body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
 }
-
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 40% !important;
+  /* width: 40% !important; */
   height: 300px;
 }
-
 
 /* Add this in your CSS file or global styles */
 .nav-underline-gradient {
@@ -29,7 +26,11 @@ body {
   bottom: 0;
   height: 2px;
   width: 0;
-  background: linear-gradient(to right, #2563eb, #16a34a); /* from-blue-600 to-green-600 */
+  background: linear-gradient(
+    to right,
+    #2563eb,
+    #16a34a
+  ); /* from-blue-600 to-green-600 */
   transition: width 0.4s ease;
 }
 
@@ -38,6 +39,19 @@ body {
   width: 100%;
 }
 
+.brand-single-slider img {
+    width: 120px;
+    height: 50px;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+/* Tailwind already supports this directly */
+.grayscale {
+  filter: grayscale(100%);
+}
+.grayscale-0 {
+  filter: grayscale(0%);
+}
 
 
 /* .swiper-slide-card-wrapper {
@@ -53,13 +67,20 @@ body {
 
 .swiper-3d .swiper-slide-shadow-left {
   /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); */
- background-image: linear-gradient(to Left, rgba(59, 130, 246, 0.25), rgba(13, 148, 136, 0))  !important;
+  background-image: linear-gradient(
+    to Left,
+    rgba(59, 130, 246, 0.25),
+    rgba(13, 148, 136, 0)
+  ) !important;
 }
 
-.swiper-3d .swiper-slide-shadow-right  {
-  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.25), rgba(13, 148, 136, 0)) !important;
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: linear-gradient(
+    to right,
+    rgba(59, 130, 246, 0.25),
+    rgba(13, 148, 136, 0)
+  ) !important;
   /* background-image: linear-gradient(to Right, rgba(13, 148, 136, 0.25), rgba(13, 148, 136, 0)); */
-
 }
 
 /* body {
