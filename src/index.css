@@ -15,7 +15,7 @@ body {
 }
 
 
-.swiper-slide-card-wrapper {
+/* .swiper-slide-card-wrapper {
   opacity: 0.4;
   transform: scale(0.95);
   transition: all 0.3s ease;
@@ -24,8 +24,18 @@ body {
 .swiper-slide-active .swiper-slide-card-wrapper {
   opacity: 1;
   transform: scale(1.05);
+} */
+
+.swiper-3d .swiper-slide-shadow-left {
+  /* background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); */
+ background-image: linear-gradient(to Left, rgba(59, 130, 246, 0.25), rgba(13, 148, 136, 0))  !important;
 }
 
+.swiper-3d .swiper-slide-shadow-right  {
+  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.25), rgba(13, 148, 136, 0)) !important;
+  /* background-image: linear-gradient(to Right, rgba(13, 148, 136, 0.25), rgba(13, 148, 136, 0)); */
+
+}
 
 /* body {
 

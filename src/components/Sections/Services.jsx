@@ -32,7 +32,7 @@ const ServicesSlider = () => {
           grabCursor={true}
           centeredSlides={true}
           loop={true}
-          // slidesPerView={4} // 👈 Show 5 slides at a time
+          // slidesPerView={3} // 👈 Show 5 slides at a time
           // spaceBetween={20}
           slidesPerView={"auto"}
           coverflowEffect={{
@@ -52,7 +52,7 @@ const ServicesSlider = () => {
           {services.map((service, index) => (
             <SwiperSlide
               key={index}
-              className="!w-auto px-[2.5%] flex justify-center py-10"
+              className="!w-auto px-[2.5%] flex justify-center "
             >
               <Link
                 to={`/services/${service.title

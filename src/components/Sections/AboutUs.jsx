@@ -46,7 +46,7 @@ const AboutUs = () => {
             </div>
 
             <div className="flex items-center gap-4 pt-4">
-              <div className="w-16 h-1 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-full"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-green-600 rounded-full"></div>
               <span className="text-slate-500 font-medium">Since 2008</span>
             </div>
           </div>
