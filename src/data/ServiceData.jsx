@@ -1,43 +1,117 @@
 import { Code, Smartphone, Globe, BarChart3, Shield, Headphones } from 'lucide-react';
 
-const services = [
+import {
+  FaShieldAlt,
+  FaHandshake,
+  FaLeaf,
+  FaBuilding,
+  FaHardHat,
+  FaMoneyCheckAlt,
+  FaUsers,
+  FaIndustry,
+  FaFileInvoiceDollar
+} from "react-icons/fa";
+
+export const services = [
   {
-    icon: Code,
-    title: 'Web Development',
-    description: 'Custom web applications built with modern technologies and best practices.',
-    features: ['React & Vue.js', 'Node.js Backend', 'Database Design', 'API Integration']
-    
+    icon: FaShieldAlt,
+    title: "Compliance Risk Review",
+    description: "Identify and manage legal and regulatory risks across your organization.",
+    features: [
+      "Risk Gap Assessment",
+      "Policy Audits",
+      "Legal Compliance Map",
+      "Mitigation Strategy"
+    ]
   },
   {
-    icon: Smartphone,
-    title: 'Mobile Apps',
-    description: 'Native and cross-platform mobile applications for iOS and Android.',
-    features: ['React Native', 'Flutter', 'Native iOS/Android', 'App Store Optimization']
+    icon: FaHandshake,
+    title: "Partner Compliance Solutions",
+    description: "Ensure your vendors and partners follow industry compliance standards.",
+    features: [
+      "Third-party Vetting",
+      "Audit Frameworks",
+      "Contractual Compliance",
+      "Ongoing Monitoring"
+    ]
   },
   {
-    icon: Globe,
-    title: 'Digital Marketing',
-    description: 'Comprehensive digital marketing strategies to grow your online presence.',
-    features: ['SEO Optimization', 'Social Media', 'Content Marketing', 'PPC Campaigns']
+    icon: FaLeaf,
+    title: "EHS Compliance Oversight",
+    description: "Monitor and enforce environmental, health, and safety compliance at all levels.",
+    features: [
+      "Environmental Audits",
+      "Workplace Safety Protocols",
+      "EHS Policy Management",
+      "Incident Reporting"
+    ]
   },
   {
-    icon: BarChart3,
-    title: 'Analytics & BI',
-    description: 'Data-driven insights and business intelligence solutions.',
-    features: ['Custom Dashboards', 'Data Visualization', 'Performance Metrics', 'Reporting Tools']
+    icon: FaBuilding,
+    title: "Unit Compliance",
+    description: "Track and standardize compliance practices across multiple business units.",
+    features: [
+      "Unit-Based Compliance Logs",
+      "Branch Training & Audits",
+      "Centralized Reporting",
+      "Internal Risk Monitoring"
+    ]
   },
   {
-    icon: Shield,
-    title: 'Cybersecurity',
-    description: 'Comprehensive security solutions to protect your digital assets.',
-    features: ['Security Audits', 'Penetration Testing', 'Compliance', 'Risk Assessment']
+    icon: FaHardHat,
+    title: "Mining Regulation Support",
+    description: "Stay compliant with evolving mining industry rules and environmental laws.",
+    features: [
+      "Permit Assistance",
+      "Operational Audits",
+      "Regulatory Updates",
+      "Safety Compliance Plans"
+    ]
   },
   {
-    icon: Headphones,
-    title: 'Support & Maintenance',
-    description: '24/7 technical support and ongoing maintenance for your systems.',
-    features: ['24/7 Monitoring', 'Regular Updates', 'Performance Optimization', 'Technical Support']
+    icon: FaMoneyCheckAlt,
+    title: "Salary Compliance Assist",
+    description: "Ensure payroll, bonuses, and compensation structures meet legal requirements.",
+    features: [
+      "Wage Structure Audits",
+      "Overtime Regulation Support",
+      "Employee Classification",
+      "Payroll Legal Review"
+    ]
   },
+  {
+    icon: FaUsers,
+    title: "Flexible Workforce Solutions",
+    description: "Compliant staffing strategies for flexible, contract, or seasonal workers.",
+    features: [
+      "Temporary Staffing Compliance",
+      "Contractor Documentation",
+      "Onboarding Support",
+      "Labour Law Alignment"
+    ]
+  },
+  {
+    icon: FaIndustry,
+    title: "Industrial Compliance Services",
+    description: "Specialized compliance support for manufacturing and heavy industries.",
+    features: [
+      "Industrial Safety Checks",
+      "Machine Regulation Mapping",
+      "Factory Audits",
+      "Hazard Compliance"
+    ]
+  },
+  {
+    icon: FaFileInvoiceDollar,
+    title: "Employee Payroll Solutions",
+    description: "Efficient and compliant employee payroll management solutions.",
+    features: [
+      "Payslip Automation",
+      "Regulatory Tax Deductions",
+      "Payroll Processing Tools",
+      "Employee Benefits Tracking"
+    ]
+  }
 ];
 
 export default services;

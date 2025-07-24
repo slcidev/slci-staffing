@@ -1,4 +1,4 @@
-import { useState,  } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -20,15 +20,22 @@ const NavDropdown = ({ title, items = [], columns = 3 }) => {
   };
 
   return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Trigger */}
-      <button className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 font-medium space-x-1">
-        <span>{title}</span>
+    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      {/* Trigger Button */}
+
+      <button
+        className={`relative nav-underline-gradient flex items-center px-5 py-2 text-gray-800 font-semibold transition-all duration-300 group ${
+          isOpen ? "nav-underline-gradient-active" : ""
+        }`}
+      >
+        <span
+          className="  transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text 
+          group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600"
+        >
+          {title}
+        </span>
         <FaChevronDown
-          className={`mt-1 transition-transform duration-300 transform ${
+          className={`ml-2 mt-1 text-gray-600 transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -37,7 +44,7 @@ const NavDropdown = ({ title, items = [], columns = 3 }) => {
       {/* Dropdown Panel */}
       {isOpen && (
         <div className="absolute top-full left-0 w-full z-50">
-          <div className="bg-white shadow-lg border-t max-w-6xl mx-auto px-6 py-6">
+          <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-b-lg shadow-lg border-t max-w-6xl mx-auto px-6 py-6">
             <div
               className="grid gap-6"
               style={{
@@ -45,15 +52,24 @@ const NavDropdown = ({ title, items = [], columns = 3 }) => {
               }}
             >
               {items.map((column, colIndex) => (
-                <div key={colIndex} className="space-y-2">
+                <div key={colIndex} className="space-y-2 ">
                   {column.map((item, itemIndex) => (
                     <NavLink
                       key={itemIndex}
                       to={item.href}
-                      className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition duration-200"
+                      className=" group flex items-center gap-3 px-4 py-2 rounded-md text-gray-700 hover:text-blue-500 bg-white  hover:shadow-md transition-all duration-200"
                     >
-                      {item.icon}
-                      <span>{item.label}</span>
+                      <span className="w-10 h-10 flex items-center justify-center rounded text-white bg-gradient-to-r from-blue-600 to-green-600 p-1 transition-transform duration-200 group-hover:scale-110">
+                        {item.icon}
+                      </span>
+
+                      <span
+                        className=" text-gray-800 font-semibold transition-all duration-300
+                        group-hover:text-transparent group-hover:bg-clip-text 
+                        group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600"
+                      >
+                        {item.label}
+                      </span>
                     </NavLink>
                   ))}
                 </div>

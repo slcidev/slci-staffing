@@ -11,7 +11,7 @@ const headingClasses = {
 }
 const subtitleClasses = {
   h1: 'text-lg sm:text-xl  sm:text-start text-slate-700 max-w-2xl',
-  h2: 'text-base sm:text-lg text-center text-slate-600  max-w-2xl',
+  h2: 'text-base sm:text-xl  text-center text-slate-600  max-w-3xl',
   h3: 'text-sm sm:text-lg text-start text-slate-600 max-w-2xl',
   h4: 'text-sm text-slate-700 max-w-xl',
   h5: 'text-sm text-slate-600 max-w-xl',
