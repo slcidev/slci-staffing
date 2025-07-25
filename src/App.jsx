@@ -5,6 +5,7 @@ import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
+import ServicePage from "./pages/ServicePage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
          <Route index element={<Home />} />
+              <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="About" element={<About />} />
           <Route path="Career" element={<Career />} />
           <Route path="Contact" element={<Contact />} />

@@ -1,7 +1,9 @@
 import React from "react";
 import { features } from "../../data/WCU";
+import FeatureCard from "../shared/FeatureCard";
 import SectionHeading from "../shared/SectionHeading";
 import HighlightText from "../shared/HighlightText";
+import { FaRocket } from "react-icons/fa";
 
 export default function WhyChooseUs() {
   return (
@@ -13,7 +15,6 @@ export default function WhyChooseUs() {
             title={
               <>
                 Why <HighlightText text="Choose" /> <HighlightText text="Us" />
-
               </>
             }
             subtitle="   Discover what makes Shakti Legal Compliance your trusted partner for compliance management in India."
@@ -22,8 +23,21 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 ">
           {features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+              bgFrom="blue-50"
+              bgTo="teal-50"
+              borderColor="teal-100"
+             
+            />
+          ))}
+
+          {/*   {features.map((feature, index) => (
             <div
               key={index}
               className="flex items-start gap-5 p-6 bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -38,7 +52,7 @@ export default function WhyChooseUs() {
                 <p className="text-sm text-[#6B6B6B]">{feature.description}</p>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

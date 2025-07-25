@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import ServiceCard from "../shared/ServiceCard";
-import services from "../../data/ServiceData";
+import {services} from "../../data/ServiceData";
 import SectionHeading from "../shared/SectionHeading";
 import HighlightText from "../shared/HighlightText";
 

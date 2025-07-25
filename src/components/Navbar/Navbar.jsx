@@ -28,16 +28,23 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center  ">
             {/* Dropdowns start */}
-            <NavDropdown  title="Services" columns={4} items={servicesLinks} />
+            <NavDropdown title="Services" columns={4} items={servicesLinks} />
             {/* <NavDropdown title="Products" columns={2} items={productsLinks} /> */}
             <NavDropdown title="Resources" columns={2} items={resourcesLinks} />
             {/* Dropdowns end */}
             <div className="group">
               <NavLink
                 to="/about"
-                className="px-4 py-2 nav-underline-gradient text-gray-800 font-semibold transition-all duration-300
-      group-hover:text-transparent group-hover:bg-clip-text 
-      group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600"
+                className={({ isActive }) =>
+                  `px-4 py-2 nav-underline-gradient font-semibold transition-all duration-300
+   ${
+     isActive
+       ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600 nav-underline-gradient-active"
+       : "text-gray-800"
+   }
+   group-hover:text-transparent group-hover:bg-clip-text 
+   group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600`
+                }
               >
                 About
               </NavLink>
@@ -45,9 +52,16 @@ const Navbar = () => {
             <div className="group">
               <NavLink
                 to="/career"
-                className="px-4 py-2 nav-underline-gradient  text-gray-800 font-semibold transition-all duration-300
-      group-hover:text-transparent group-hover:bg-clip-text 
-      group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600"
+               className={({ isActive }) =>
+                  `px-4 py-2 nav-underline-gradient font-semibold transition-all duration-300
+   ${
+     isActive
+       ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600 nav-underline-gradient-active"
+       : "text-gray-800"
+   }
+   group-hover:text-transparent group-hover:bg-clip-text 
+   group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600`
+                }
               >
                 Career
               </NavLink>

@@ -59,7 +59,7 @@ const NavDropdown = ({ title, items = [], columns = 3 }) => {
                       to={item.href}
                       className=" group flex items-center gap-3 px-4 py-2 rounded-md text-gray-700 hover:text-blue-500 bg-white  hover:shadow-md transition-all duration-200"
                     >
-                      <span className="w-10 h-10 flex items-center justify-center rounded text-white bg-gradient-to-r from-blue-600 to-green-600 p-1 transition-transform duration-200 group-hover:scale-110">
+                      <span className="w-10 h-10 flex items-center justify-center rounded text-white bg-gradient-to-r from-blue-500 to-teal-500 p-1 transition-transform duration-200 group-hover:scale-110">
                         {item.icon}
                       </span>
 

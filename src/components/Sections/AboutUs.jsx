@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-17 bg-white">
       <div className="max-w-7xl mx-auto px-4 text sm:px-6 lg:px-8">
         <div className="flex justify-center align-center  mb-16">
           <SectionHeading
@@ -61,7 +61,7 @@ const AboutUs = () => {
             const Icon = stat.icon;
             return (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Icon className="text-white" size={24} />
                 </div>
                 <div className="text-3xl font-bold text-slate-900 mb-2">
