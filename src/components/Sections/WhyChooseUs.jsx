@@ -37,22 +37,7 @@ export default function WhyChooseUs() {
             />
           ))}
 
-          {/*   {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-5 p-6 bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="p-3 rounded-full bg-gradient-to-br from-emerald-100 to-teal-100">
-                {feature.icon}
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#2B2B2B] mb-1">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-[#6B6B6B]">{feature.description}</p>
-              </div>
-            </div>
-          ))} */}
+       
         </div>
       </div>
     </section>

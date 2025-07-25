@@ -22,7 +22,7 @@ const Navbar = () => {
             to="/"
             className="text-xl font-bold text-blue-600 transition-colors duration-200"
           >
-            <img src={logo} alt="Company Logo" className="h-12 w-auto" />
+            <img loading="lazy" src={logo} alt="Company Logo" className="h-12 w-auto" />
           </NavLink>
 
           {/* Desktop Menu */}

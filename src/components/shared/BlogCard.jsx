@@ -6,6 +6,7 @@ export default function BlogCard({ post }) {
     <article className="group bg-white rounded-2xl cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-teal-100">
       <div className="relative overflow-hidden">
         <img
+        loading="lazy"
           src={post.image}
           alt={post.title}
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
