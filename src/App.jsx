@@ -6,11 +6,13 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
 import ServicePage from "./pages/ServicePage";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     
     <BrowserRouter>
+    <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<MainLayout />}>
          <Route index element={<Home />} />
