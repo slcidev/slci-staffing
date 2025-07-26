@@ -1,4 +1,3 @@
-import React from "react";
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxg9JATdt1XKvmQvC1C4oNhEqt-n5Vhfp0RbJztXxg4ew2PyIGu5yvsLBgnTXlqr24/exec";
