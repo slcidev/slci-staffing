@@ -62,25 +62,25 @@ import { MapPin, Clock, DollarSign, Users, Rocket, Heart } from "lucide-react";
 
   export  const benefits = [
     {
-      icon: <Heart className="text-red-500" size={32} />,
+      icon: Heart,
       title: "Comprehensive Health",
       description:
         "Full medical, dental, and vision coverage for you and your family",
     },
     {
-      icon: <Clock className="text-blue-600" size={32} />,
+      icon: Clock,
       title: "Flexible Schedule",
       description:
         "Work-life balance with flexible hours and remote work options",
     },
     {
-      icon: <Rocket className="text-emerald-600" size={32} />,
+      icon: Rocket,
       title: "Growth Opportunities",
       description:
         "Professional development budget and career advancement paths",
     },
     {
-      icon: <Users className="text-purple-600" size={32} />,
+      icon: Users,
       title: "Great Team Culture",
       description:
         "Collaborative environment with team events and social activities",

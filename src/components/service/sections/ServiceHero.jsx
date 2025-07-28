@@ -27,8 +27,6 @@ export default function ServiceHero({
   image,
   highlight = [],
   ctaLabel,
-
-
 }) {
   return (
     <section

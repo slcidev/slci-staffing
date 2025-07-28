@@ -11,7 +11,7 @@ const CtaButton = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex text-xs sm:text-base cursor-pointer items-center  gap-2 px-4 sm:px-8 py-2 sm:py-4 rounded-full font-semibold transition-all duration-300";
+    "inline-flex text-xs sm:text-base cursor-pointer items-center  gap-2 px-4 sm:px-8 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300";
 
   const primaryStyles =
     "bg-gradient-to-r from-blue-600 to-green-600 text-white hover:from-blue-700 hover:to-green-700 transform hover:scale-105";

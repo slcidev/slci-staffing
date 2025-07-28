@@ -1,7 +1,10 @@
 import React from "react";
 import { MapPin, Clock, DollarSign, Users, Rocket, Heart } from "lucide-react";
+
 import ServiceHero from "../components/service/sections/ServiceHero";
 import { positions, benefits } from "../data/CareerData";
+import CtaButton from "../components/shared/CtaButton";
+import FeatureCard from "../components/shared/FeatureCard";
 
 const Career = () => {
   return (
@@ -10,7 +13,7 @@ const Career = () => {
 
       <ServiceHero
         title="Join Our Amazing Team "
-        highlight={["Amazing", "Team", ]}
+        highlight={["Amazing", "Team"]}
         subtitle="Simplify your salary processing with automation, compliance, and peace of mind."
         image="https://picsum.photos/id/5/500/300"
         ctaLabel="View Open Positions"
@@ -42,7 +45,7 @@ const Career = () => {
 
       {/* Why Work With Us */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Why Work With Us?
@@ -52,29 +55,40 @@ const Career = () => {
             </p>
           </div>
 
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl">
-                    {benefit.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600">{benefit.description}</p>
+
+                 <FeatureCard
+              key={index}
+              icon={benefit.icon}
+              title={benefit.title}
+              description={benefit.description}
+              bgFrom="blue-50"
+              bgTo="teal-50"
+              borderColor="teal-100"
+            />
+          ))}
+          {/* <div
+            key={index}
+            className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white shadow-lg hover:shadow-xl  transition-all duration-200 cursor-default hover:scale-105 "
+          >
+            <div className="flex justify-center mb-4">
+              <div className="p-3 bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl">
+                {benefit.icon}
               </div>
-            ))}
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              {benefit.title}
+            </h3>
+            <p className="text-gray-600">{benefit.description}</p>
+          </div> */}
           </div>
         </div>
       </section>
 
       {/* Open Positions */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -137,9 +151,7 @@ const Career = () => {
                   </div>
 
                   <div className="mt-6 lg:mt-0 lg:ml-8">
-                    <button className="w-full lg:w-auto bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                      Apply Now
-                    </button>
+                    <CtaButton>Apply Now</CtaButton>
                   </div>
                 </div>
               </div>
@@ -155,16 +167,14 @@ const Career = () => {
                 We're always looking for talented individuals. Send us your
                 resume and let us know how you'd like to contribute.
               </p>
-              <button className=" cursor-pointer bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-                Send Resume
-              </button>
+              <CtaButton>Send Resume</CtaButton>
             </div>
           </div>
         </div>
       </section>
 
       {/* Culture */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-teal-50">
+      {/*  <section className="py-20 bg-gradient-to-r from-blue-50 to-teal-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-800">
           <h2 className="text-4xl font-bold mb-6">
             Ready to Start Your Journey?
@@ -173,7 +183,22 @@ const Career = () => {
             Join a team that values innovation, collaboration, and personal
             growth. Your next career adventure starts here.
           </p>
-          <button className=" cursor-pointer bg-gradient-to-r  from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ">
+          <CtaButton>Apply Today</CtaButton>
+
+        </div>
+
+      </section> */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-emerald-500">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h2 className="text-4xl font-bold mb-6">
+            {" "}
+            Ready to Start Your Journey?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Join a team that values innovation, collaboration, and personal
+            growth. Your next career adventure starts here.
+          </p>
+          <button className=" cursor-pointer bg-white hover:shadow-2xl text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-teal-50 transition-all">
             Apply Today
           </button>
         </div>
