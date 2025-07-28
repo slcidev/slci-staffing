@@ -26,6 +26,9 @@ export default function ServiceHero({
   subtitle,
   image,
   highlight = [],
+  ctaLabel,
+
+
 }) {
   return (
     <section
@@ -51,8 +54,9 @@ export default function ServiceHero({
 
             <div className="flex justify-center sm:justify-start gap-4">
               <CtaButton variant="primary" icon={<ArrowRight size={20} />}>
-                Get Started
+                {ctaLabel}
               </CtaButton>
+          
             </div>
           </div>
 

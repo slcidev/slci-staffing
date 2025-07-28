@@ -1,4 +1,4 @@
-
+/* 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxg9JATdt1XKvmQvC1C4oNhEqt-n5Vhfp0RbJztXxg4ew2PyIGu5yvsLBgnTXlqr24/exec";
 
@@ -7,7 +7,6 @@ export const submitToSheet = async (data) => {
     console.log("Submitting data:", data); 
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
-      // prevent CORS error but note: response will be opaque
       headers: {
         "Content-Type": "application/json",
       },
@@ -22,3 +21,4 @@ export const submitToSheet = async (data) => {
     throw new Error("Submission failed");
   }
 };
+ */

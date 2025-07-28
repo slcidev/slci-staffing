@@ -2,7 +2,7 @@ import React from "react";
 import Form from "../components/shared/Form";
 import ContactInfo from "../components/shared/ContactInfo";
 import { contactFormConfig } from "../data/FormConfig";
-import { submitToSheet } from "../utils/submitToGoogleSheet";
+// import { submitToSheet } from "../utils/submitToGoogleSheet";
 
 const Contact = () => {
   return (

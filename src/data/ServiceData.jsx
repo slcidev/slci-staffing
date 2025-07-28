@@ -138,7 +138,7 @@ export const ServiceDetails = {
       subtitle:
         "Simplify your salary processing with automation, compliance, and peace of mind.",
       image: "https://picsum.photos/id/5/500/300",
-
+      ctaLabel:"Get Started",
     },
 
     whoNeedsThis: {

@@ -63,7 +63,7 @@ const Form = ({
                   required: field.required ? `${field.label || field.name} is required` : false,
                 })}
                 placeholder={field.placeholder}
-                className={`px-4 py-2 border rounded-3xl  h-40 bg-white ${
+                className={`px-4 py-2 border rounded-xl sm:rounded-3xl  sm:h-40 bg-white ${
                   errors[field.name] ? "border-red-500" : "border-gray-300"
                 }`}
                 aria-invalid={!!errors[field.name]}
@@ -76,7 +76,7 @@ const Form = ({
                   required: field.required ? `${field.label || field.name} is required` : false,
                 })}
                 placeholder={field.placeholder}
-                className={`px-4 py-3 border rounded-3xl bg-white  ${
+                className={`px-4 py-2 sm:py-3 border rounded-xl sm:rounded-3xl bg-white  ${
                   errors[field.name] ? "border-red-500" : "border-gray-300"
                 }`}
                 aria-invalid={!!errors[field.name]}
@@ -94,7 +94,7 @@ const Form = ({
 
       <button
         type="submit"
-        className="w-full mt-4 bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition"
+        className="w-full mt-4 bg-gradient-to-r from-blue-600 to-green-600  text-white py-3 rounded hover:from-blue-700 hover:to-green-700 transition"
       >
         {submitLabel}
       </button>
