@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import {ServiceDetails} from "../data/ServiceData";
 import ServiceHero from "../components/service/sections/ServiceHero";
 import WhoNeedsThis from "../components/service/sections/WhoNeedsThis";
-// import OurServices from "../components/service/sections/OurServices";
-// import WhyNeeded from "../components/service/sections/WhyNeeded";
+import OurComprehensiveServices from "../components/service/sections/OurComprehensiveServices";
+import WhyNeeded from "../components/service/sections/WhyNeeded";
 // import FaqSection from "../components/service/sections/FaqSection";
 
 
@@ -19,6 +19,8 @@ const ServicePage = () => {
     <main>
       <ServiceHero {...service.hero} />
       <WhoNeedsThis {...service.whoNeedsThis} />
+      <OurComprehensiveServices {...service.ourServices}/>
+      <WhyNeeded {...service.whyNeeded} />
       {/*
       <OurServices services={service.ourServices} />
       <WhyNeeded points={service.whyNeeded.points} />

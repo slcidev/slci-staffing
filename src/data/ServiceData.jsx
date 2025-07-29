@@ -21,6 +21,12 @@ import {
   FaCheckCircle,
   FaCalendarAlt,
 } from "react-icons/fa";
+import {
+  FaBalanceScale,
+  FaCalendarCheck,
+  FaGift,
+  FaFileAlt,
+} from "react-icons/fa";
 
 export const services = [
   {
@@ -142,63 +148,66 @@ export const ServiceDetails = {
         "Simplify your salary processing with automation, compliance, and peace of mind.",
       image: "https://picsum.photos/id/5/500/300",
       ctaLabel: "Get Started",
-      
     },
 
     whoNeedsThis: {
       description:
-        "Payroll management is essential for companies that need to efficiently manage employee compensation and stay compliant with statutory laws.",
-      points: [
-        {
-          icon: FaCheckCircle, // Icon component
-          title: "Check-In", // Title for the card
-          description: "Tap to check-in for work", // Description for the card
-          iconSize: "60px", // Custom size for the icon
-          ariaLabel: "Check-In Icon", // aria-label for accessibility
-        },
-        {
-          icon: FaCalendarAlt, // Icon component
-          title: "Leave Application", // Title for the card
-          description: "Apply for leave easily", // Description for the card
-          iconSize: "50px", // Custom size for the icon
-          ariaLabel: "Leave Application Icon", // aria-label for accessibility
-        },
-        {
-          icon: FaCogs, // Icon component
-          title: "Settings", // Title for the card
-          description: "Update your preferences", // Description for the card
-          iconSize: "40px", // Custom size for the icon
-          ariaLabel: "Settings Icon", // aria-label for accessibility
-        },
-        {
-          icon: FaCogs, // Icon component
-          title: "Settings", // Title for the card
-          description: "Update your preferences", // Description for the card
-          iconSize: "40px", // Custom size for the icon
-          ariaLabel: "Settings Icon", // aria-label for accessibility
-        },
-        {
-          icon: FaCogs, // Icon component
-          title: "Settings", // Title for the card
-          description:
-            "Payroll management is essential for companies that need to efficiently manage employee compensation and stay compliant with statutory laws.", // Description for the card
-          iconSize: "40px", // Custom size for the icon
-          ariaLabel: "Settings Icon", // aria-label for accessibility
-        },
-      ],
-      buttonLabel:"Get a Quote from our  Compliance Team!",
+        "Businesses of all sizes and industries need a reliable Payroll compliance service provider to ensure they meet regulatory requirements related to employee compensation. Whether you’re a startup or a large corporation with a Pan-India presence, these payroll processing services are crucial for maintaining legal compliance and operational integrity.",
+
     },
 
-    ourServices: [
-      "Salary Processing & Payslips",
-      "Statutory Compliance (PF, ESI, TDS)",
-      "Leave & Attendance Integration",
-      "Bonus & Gratuity Management",
-      "Form 16 and Year-End Reports",
-    ],
+    ourServices: {
+      description:
+        "At SLCI, a leading provider among payroll processing companies, our team of experts provides comprehensive Payroll Compliance Services to support your business at every stage, ensuring seamless operations and adherence to regulatory requirements:",
+
+      points: [
+        {
+          icon: FaFileInvoiceDollar,
+          title: "Salary & Payslips",
+          description:
+            "Automated salary processing with downloadable payslips every cycle.",
+          iconSize: "60px",
+          ariaLabel: "Salary Processing and Payslip Icon",
+        },
+        {
+          icon: FaBalanceScale,
+          title: "Statutory Compliance",
+          description:
+            "Ensure PF, ESI, and TDS compliance with timely filings and reports.",
+          iconSize: "50px",
+          ariaLabel: "Statutory Compliance Icon",
+        },
+        {
+          icon: FaCalendarCheck,
+          title: "Leave & Attendance",
+          description:
+            "Integrated system to track leave, holidays, and working hours.",
+          iconSize: "50px",
+          ariaLabel: "Leave and Attendance Icon",
+        },
+        {
+          icon: FaGift,
+          title: "Bonus & Gratuity",
+          description:
+            "Manage employee bonuses and gratuity with accurate calculations.",
+          iconSize: "48px",
+          ariaLabel: "Bonus and Gratuity Icon",
+        },
+        {
+          icon: FaFileAlt,
+          title: "Form 16 & Reports",
+          description:
+            "Generate Form 16 and comprehensive year-end payroll reports.",
+          iconSize: "48px",
+          ariaLabel: "Form 16 and Year-End Reports Icon",
+        },
+      ],
+
+      buttonLabel: "Get a Quote from our  Compliance Team!",
+    },
 
     whyNeeded: {
-      points: [
+      pointNeeded: [
         "Avoid penalties due to non-compliance",
         "Save time with automation",
         "Improve employee trust with accurate payouts",
