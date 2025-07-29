@@ -1,16 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 
-const FlipCard = ({ icon: Icon, title, description }) => {
+const Card = ({
+  icon: Icon,
+  title,
+  description,
+  iconSize = "48px",
+  ariaLabel,
+}) => {
   return (
     <StyledWrapper>
-      <div className="card">
+      <div className="card shadow hover:shadow-xl transition-all duration-300 ">
         <div className="card__front">
-          {Icon && <Icon className="icon" />}
+          {Icon && (
+            <Icon
+              className="icon"
+              style={{ fontSize: iconSize }} // Dynamic icon size
+              aria-label={ariaLabel || title} // Adding aria-label for accessibility
+            />
+          )}
           <p className="card__title">{title}</p>
         </div>
-        <div className="card__back">
-          <p className="card__title">{title}</p>
+        <div className="card__back shadow-2xl bg-gradient-to-r from-blue-50 to-teal-50 border border-teal-100">
           <p className="card__description">{description}</p>
         </div>
       </div>
@@ -20,13 +31,15 @@ const FlipCard = ({ icon: Icon, title, description }) => {
 
 const StyledWrapper = styled.div`
   .card {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 3 / 3;
+    max-width: 100%;
     position: relative;
-    background-color: #f2f2f2;
+    // background-color: #f2f2f2;
     border-radius: 10px;
     overflow: hidden;
     perspective: 1000px;
+    //  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .card__front,
@@ -46,7 +59,8 @@ const StyledWrapper = styled.div`
   }
 
   .card__front {
-    background-color: #e3f2fd;
+    // background-color: #e3f2fd;
+    background-color: #fafafa;
     z-index: 2;
     transform: rotateX(0deg);
   }
@@ -66,8 +80,6 @@ const StyledWrapper = styled.div`
   }
 
   .icon {
-    font-size: 48px;
-    color: #333;
     margin-bottom: 10px;
   }
 
@@ -85,8 +97,7 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export default FlipCard;
- 
+export default Card;
 
 /* import React from "react";
 import styled from "styled-components";

@@ -17,6 +17,9 @@ import {
   FaUsers,
   FaIndustry,
   FaFileInvoiceDollar,
+  FaCogs,
+  FaCheckCircle,
+  FaCalendarAlt,
 } from "react-icons/fa";
 
 export const services = [
@@ -138,18 +141,49 @@ export const ServiceDetails = {
       subtitle:
         "Simplify your salary processing with automation, compliance, and peace of mind.",
       image: "https://picsum.photos/id/5/500/300",
-      ctaLabel:"Get Started",
+      ctaLabel: "Get Started",
     },
 
     whoNeedsThis: {
       description:
         "Payroll management is essential for companies that need to efficiently manage employee compensation and stay compliant with statutory laws.",
       points: [
-        "Startups scaling their teams rapidly",
-        "Enterprises with complex salary structures",
-        "Organizations with contract/freelance staff",
-        "Companies seeking automated compliance",
-        "Businesses tired of manual payroll errors",
+        {
+          icon: FaCheckCircle, // Icon component
+          title: "Check-In", // Title for the card
+          description: "Tap to check-in for work", // Description for the card
+          iconSize: "60px", // Custom size for the icon
+          ariaLabel: "Check-In Icon", // aria-label for accessibility
+        },
+        {
+          icon: FaCalendarAlt, // Icon component
+          title: "Leave Application", // Title for the card
+          description: "Apply for leave easily", // Description for the card
+          iconSize: "50px", // Custom size for the icon
+          ariaLabel: "Leave Application Icon", // aria-label for accessibility
+        },
+        {
+          icon: FaCogs, // Icon component
+          title: "Settings", // Title for the card
+          description: "Update your preferences", // Description for the card
+          iconSize: "40px", // Custom size for the icon
+          ariaLabel: "Settings Icon", // aria-label for accessibility
+        },
+        {
+          icon: FaCogs, // Icon component
+          title: "Settings", // Title for the card
+          description: "Update your preferences", // Description for the card
+          iconSize: "40px", // Custom size for the icon
+          ariaLabel: "Settings Icon", // aria-label for accessibility
+        },
+        {
+          icon: FaCogs, // Icon component
+          title: "Settings", // Title for the card
+          description:
+            "Payroll management is essential for companies that need to efficiently manage employee compensation and stay compliant with statutory laws.", // Description for the card
+          iconSize: "40px", // Custom size for the icon
+          ariaLabel: "Settings Icon", // aria-label for accessibility
+        },
       ],
     },
 
