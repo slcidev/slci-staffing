@@ -142,6 +142,7 @@ export const ServiceDetails = {
         "Simplify your salary processing with automation, compliance, and peace of mind.",
       image: "https://picsum.photos/id/5/500/300",
       ctaLabel: "Get Started",
+      
     },
 
     whoNeedsThis: {
@@ -185,6 +186,7 @@ export const ServiceDetails = {
           ariaLabel: "Settings Icon", // aria-label for accessibility
         },
       ],
+      buttonLabel:"Get a Quote from our  Compliance Team!",
     },
 
     ourServices: [
