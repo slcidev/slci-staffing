@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeading from "../../shared/SectionHeading";
 import HighlightText from "../../shared/HighlightText";
-import Card from "../../shared/card";
+import Card from "../../shared/Card";
 import { ArrowRight } from "lucide-react";
 
 export default function OurComprehensiveServices({ description, points = [], buttonLabel }) {
