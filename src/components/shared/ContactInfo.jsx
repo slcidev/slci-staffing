@@ -12,7 +12,7 @@ const ContactInfo = ({ icon = "email", title, items = [], text = "" }) => {
   const IconComponent = iconMap[icon] || Mail;
 
   return (
-    <div className="text-center border-b border-slate-300 py-5 px-5">
+    <div className="text-center border-b border-slate-300 pb-5">
       <div className="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 ">
         <IconComponent size={28} />
       </div>

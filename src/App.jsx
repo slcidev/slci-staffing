@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
 import ServicePage from "./pages/ServicePage";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/ScrollTotop";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="Contact" element={<Contact />} />
         </Route>
       </Routes>
+      <ScrollToTop/>
     </BrowserRouter>
   );
 };

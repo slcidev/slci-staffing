@@ -59,11 +59,9 @@ const Form = ({
             {field.type === "textarea" ? (
               <textarea
                 id={field.name}
-                {...register(field.name, {
-                  required: field.required ? `${field.label || field.name} is required` : false,
-                })}
+                {...register(field.name,)}
                 placeholder={field.placeholder}
-                className={`px-4 py-2 border rounded-xl sm:rounded-3xl  sm:h-40 bg-white ${
+                className={`px-4 py-2 border rounded-xl sm:rounded-2xl  sm:h-20 bg-white ${
                   errors[field.name] ? "border-red-500" : "border-gray-300"
                 }`}
                 aria-invalid={!!errors[field.name]}

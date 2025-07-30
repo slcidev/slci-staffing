@@ -22,16 +22,16 @@ const Navbar = () => {
             to="/"
             className="text-xl font-bold text-blue-600 transition-colors duration-200"
           >
-            <img loading="lazy" src={logo} alt="Company Logo" className="h-12 w-auto" />
+            <img
+              loading="lazy"
+              src={logo}
+              alt="Company Logo"
+              className="h-12 w-auto"
+            />
           </NavLink>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center  ">
-            {/* Dropdowns start */}
-            <NavDropdown title="Services" columns={4} items={servicesLinks} />
-            {/* <NavDropdown title="Products" columns={2} items={productsLinks} /> */}
-            <NavDropdown title="Resources" columns={2} items={resourcesLinks} />
-            {/* Dropdowns end */}
             <div className="group">
               <NavLink
                 to="/about"
@@ -49,10 +49,16 @@ const Navbar = () => {
                 About
               </NavLink>
             </div>
+            {/* Dropdowns start */}
+            <NavDropdown title="Services" columns={4} items={servicesLinks} />
+            {/* <NavDropdown title="Products" columns={2} items={productsLinks} /> */}
+            <NavDropdown title="Resources" columns={2} items={resourcesLinks} />
+            {/* Dropdowns end */}
+
             <div className="group">
               <NavLink
                 to="/career"
-               className={({ isActive }) =>
+                className={({ isActive }) =>
                   `px-4 py-2 nav-underline-gradient font-semibold transition-all duration-300
    ${
      isActive
@@ -138,6 +144,10 @@ const Navbar = () => {
             About
           </NavLink>
 
+
+          <MobileDropdown title="Services" items={servicesLinks} />
+          {/* <MobileDropdown title="Products" items={productsLinks} /> */}
+          <MobileDropdown title="Resources" items={resourcesLinks} />
           <NavLink
             to="/career"
             className=" block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-100 rounded-lg transition"
@@ -145,10 +155,6 @@ const Navbar = () => {
           >
             Career
           </NavLink>
-
-          <MobileDropdown title="Services" items={servicesLinks} />
-          <MobileDropdown title="Products" items={productsLinks} />
-          <MobileDropdown title="Resources" items={resourcesLinks} />
 
           <NavLink
             to="/contact"
