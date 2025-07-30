@@ -6,6 +6,7 @@ import InputField from "./InputField";
 // import { Dialog } from "@headlessui/react";
 
 
+
 const Form = ({
   formConfig = [],
   onSubmitHandler,
@@ -59,9 +60,11 @@ const Form = ({
             {field.type === "textarea" ? (
               <textarea
                 id={field.name}
-                {...register(field.name,)}
+                {...register(field.name, {
+                  required: field.required ? `${field.label || field.name} is required` : false,
+                })}
                 placeholder={field.placeholder}
-                className={`px-4 py-2 border rounded-xl sm:rounded-2xl  sm:h-20 bg-white ${
+                className={`px-4 py-2 border rounded-xl sm:rounded-3xl  sm:h-20 bg-white ${
                   errors[field.name] ? "border-red-500" : "border-gray-300"
                 }`}
                 aria-invalid={!!errors[field.name]}
@@ -102,3 +105,58 @@ const Form = ({
 
 export default Form;
 
+
+/* import React from "react";
+import { useForm } from "react-hook-form";
+
+const Form = ({ formConfig, onSubmitHandler, submitLabel }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    onSubmitHandler(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      {formConfig.map((field) => (
+        <div key={field.name} className="flex flex-col">
+          <label className="mb-1 font-medium">{field.label}</label>
+          {field.type === "textarea" ? (
+            <textarea
+              {...register(field.name, field.validation)}
+              placeholder={field.placeholder}
+              className="border rounded p-2"
+            />
+          ) : (
+            <input
+              type={field.type || "text"}
+              {...register(field.name, field.validation)}
+              placeholder={field.placeholder}
+              className="border rounded p-2"
+            />
+          )}
+          {errors[field.name] && (
+            <span className="text-sm text-red-500 mt-1">
+              {errors[field.name]?.message}
+            </span>
+          )}
+        </div>
+      ))}
+
+      <button
+        type="submit"
+        className="bg-blue-600 text-white px-4 py-2 rounded shadow"
+      >
+        {submitLabel}
+      </button>
+    </form>
+  );
+};
+
+export default Form;
+
+ */

@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../components/shared/Form";
 import ContactInfo from "../components/shared/ContactInfo";
 import { contactFormConfig } from "../data/FormConfig";
+// import { SubmitToGoogleSheet } from "../utils/SubmitToGoogleSheet";
 // import { submitToSheet } from "../utils/submitToGoogleSheet";
 
 const Contact = () => {
@@ -31,12 +32,13 @@ const Contact = () => {
               <Form
                 formConfig={contactFormConfig.fields}
                 submitLabel={contactFormConfig.submitButtonText}
-                onSubmitHandler={(data) =>
-                  submitToSheet({
+               /*  onSubmitHandler={(data) =>
+                  SubmitToGoogleSheet({
                     ...data,
+                     Date: new Date().toLocaleString(),
                     sheetName: contactFormConfig.sheetName,
                   })
-                }
+                } */
               />
             </div>
           </div>

@@ -1,30 +1,34 @@
 import React from "react";
 
+
 export const contactFormConfig = {
   formName: "Contact",
-  sheetName: "Sheet1",
+  sheetName: "Contact",
   fields: [
-    { name: "name", placeholder:" Enter Your Full Name", label: "Your Name", type: "text", required: true },
-    { name: "email", placeholder:"Enter Your Email",  label: "Email Address", type: "email", required: true },
-    { name: "phone", placeholder:"Enter Your Mobile Number", label: "Phone Number", type: "tel", required: true },
-    { name: "subject", placeholder:"Subject", label: "Subject", type: "text", required: true },
-    { name: "message", placeholder:"Message", label: "Message", type: "textarea", required: true },
+    { name: "Name", placeholder:" Enter Your Full Name", label: "Your Name", type: "text", required: true },
+    { name: "Email", placeholder:"Enter Your Email",  label: "Email Address", type: "email", required: true },
+    { name: "Phone", placeholder:"Enter Your Mobile Number", label: "Phone Number", type: "tel", required: true },
+    { name: "Subject", placeholder:"Subject", label: "Subject", type: "text", required: true },
+    { name: "Message", placeholder:"Message", label: "Message", type: "textarea",  },
   ],
   submitButtonText: "Submit Now",
   successMessage: "Message sent successfully!",
   errorMessage: "Something went wrong. Please try again.",
 };
-export const popupFormConfig = [
-  {
-    name: "email",
-    type: "email",
-    placeholder: "Enter your email",
-    validation: {
-      required: "Email is required",
-      pattern: { value: /^\S+@\S+$/, message: "Invalid email" },
-    },
-  },
-];
+export const popupFormConfig = {
+  formName: "Popup Form",
+  sheetName: "PopupForm",
+  fields: [
+    { name: "Name", placeholder:" Enter Your Full Name", label: "Your Name", type: "text", required: true },
+    { name: "Email", placeholder:"Enter Your Email",  label: "Email Address", type: "email", required: true },
+    { name: "Phone", placeholder:"Enter Your Mobile Number", label: "Phone Number", type: "tel", required: true },
+    { name: "Subject", placeholder:"Subject", label: "Subject", type: "text", required: true },
+    { name: "Message", placeholder:"Message", label: "Message", type: "textarea",  },
+  ],
+  submitButtonText: "Submit Now",
+  successMessage: "Message sent successfully!",
+  errorMessage: "Something went wrong. Please try again.",
+}
 
 export const careerFormConfig = [
   { name: "fullName", placeholder: "Full Name", validation: { required: "Required" } },
