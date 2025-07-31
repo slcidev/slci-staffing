@@ -5,7 +5,7 @@ import CtaButton from "../shared/CtaButton";
 import HighlightText from "../shared/HighlightText";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({onCtaClick ,title}) {
   return (
     <section
       id="home"
@@ -34,15 +34,33 @@ export default function Hero() {
             />
 
             <div className="flex justify-center sm:justify-start gap-4">
-              <CtaButton variant="primary" icon={<ArrowRight size={20} />}>
+           {/*    <CtaButton
+              variant="primary" icon={<ArrowRight size={20} />}
+                onClick={() => {
+                  if (typeof onCtaClick === "function") {
+                    onCtaClick(title); // or slug if you prefer
+                  } else {
+                    console.log("onCtaClick not defined");
+                  }
+                }}
+                className="mt-6"
+              >
+               Get Started
+              </CtaButton> */}
+
+              <CtaButton variant="primary" icon={<ArrowRight size={20} />}
+               onClick={() => {
+                  if (typeof onCtaClick === "function") {
+                    onCtaClick(title); // or slug if you prefer
+                  } else {
+                    console.log("onCtaClick not defined");
+                  }
+                }}
+              >
                 Get Started
               </CtaButton>
 
-              <CtaButton
-                variant="secondary"
-                icon={<Play size={20} />}
-                
-              >
+              <CtaButton variant="secondary" icon={<Play size={20} />}>
                 Watch Demo
               </CtaButton>
             </div>

@@ -27,6 +27,7 @@ export default function ServiceHero({
   image,
   highlight = [],
   ctaLabel,
+  onCtaClick,
 }) {
   return (
     <section
@@ -51,10 +52,25 @@ export default function ServiceHero({
             />
 
             <div className="flex justify-center sm:justify-start gap-4">
-              <CtaButton variant="primary" icon={<ArrowRight size={20} />}>
+              <CtaButton
+                variant="primary"
+                icon={<ArrowRight size={20} />}
+                onClick={() => {
+                  if (typeof onCtaClick === "function") {
+                    onCtaClick(title); // or slug if you prefer
+                  } else {
+                    console.log("onCtaClick not defined");
+                  }
+                }}
+                className="mt-6"
+              >
                 {ctaLabel}
               </CtaButton>
-          
+              {/*   <CtaButton
+                onClick={() => onCtaClick(title)}
+                variant="primary"
+                icon={<ArrowRight size={20} />}
+              ></CtaButton> */}
             </div>
           </div>
 

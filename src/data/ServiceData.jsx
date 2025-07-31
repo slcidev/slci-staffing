@@ -203,7 +203,7 @@ export const ServiceDetails = {
         },
       ],
 
-      buttonLabel: "Get a Quote from our  Compliance Team!",
+      ctaLabel: "Get a Quote from our  Compliance Team!",
     },
 
     whyNeeded: {

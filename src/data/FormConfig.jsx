@@ -30,12 +30,57 @@ export const popupFormConfig = {
   errorMessage: "Something went wrong. Please try again.",
 }
 
-export const careerFormConfig = [
-  { name: "fullName", placeholder: "Full Name", validation: { required: "Required" } },
-  { name: "email", type: "email", placeholder: "Email", validation: { required: "Required" } },
-  { name: "position", placeholder: "Position Applying For", validation: { required: "Required" } },
-  { name: "resume", type: "text", placeholder: "Resume Link", validation: { required: "Required" } },
-];
+// 📁 src/data/CareerFormConfig.js
+export const careerFormConfig = {
+  title: "Apply for a Position",
+  description: "Fill in your details and upload your resume. We'll get back to you soon.",
+  fields: [
+    {
+      name: "fullName",
+      placeholder: "Full Name",
+      type: "text",
+      validation: { required: "Full Name is required" },
+    },
+    {
+      name: "email",
+      placeholder: "Email Address",
+      type: "email",
+      validation: {
+        required: "Email is required",
+        pattern: {
+          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          message: "Enter a valid email address",
+        },
+      },
+    },
+    {
+      name: "position",
+      placeholder: "Position Applying For",
+      type: "text",
+      validation: { required: "Please specify the position" },
+    },
+    {
+      name: "resume",
+      placeholder: "Upload Resume (PDF/DOC)",
+      type: "file",
+      accept: ".pdf,.doc,.docx",
+      validation: { required: "Resume upload is required" },
+    },
+    {
+      name: "coverLetter",
+      placeholder: "Upload Cover Letter (Optional)",
+      type: "file",
+      accept: ".pdf,.doc,.docx",
+      validation: {},
+    },
+    {
+      name: "notes",
+      placeholder: "Additional Notes (Optional)",
+      type: "textarea",
+      validation: {},
+    },
+  ],
+};
 
 
 export const getPageFormConfig = (pageName) => [

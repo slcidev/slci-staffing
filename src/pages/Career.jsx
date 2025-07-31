@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { MapPin, Clock, DollarSign, Users, Rocket, Heart } from "lucide-react";
 
 import ServiceHero from "../components/service/sections/ServiceHero";
 import { positions, benefits } from "../data/CareerData";
 import CtaButton from "../components/shared/CtaButton";
 import FeatureCard from "../components/shared/FeatureCard";
+import { careerFormConfig,} from "../data/FormConfig";
+import PopupFormModal from "../components/shared/PopupFormModal";
 
 const Career = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [pageContext, setPageContext] = useState("/");
+
+  const openPopupForm = () => {
+    setPageContext("Career page ");
+    setIsOpen(true);
+  };
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -55,21 +64,19 @@ const Career = () => {
             </p>
           </div>
 
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-
-                 <FeatureCard
-              key={index}
-              icon={benefit.icon}
-              title={benefit.title}
-              description={benefit.description}
-              bgFrom="blue-50"
-              bgTo="teal-50"
-              borderColor="teal-100"
-            />
-          ))}
-          {/* <div
+              <FeatureCard
+                key={index}
+                icon={benefit.icon}
+                title={benefit.title}
+                description={benefit.description}
+                bgFrom="blue-50"
+                bgTo="teal-50"
+                borderColor="teal-100"
+              />
+            ))}
+            {/* <div
             key={index}
             className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white shadow-lg hover:shadow-xl  transition-all duration-200 cursor-default hover:scale-105 "
           >
@@ -202,6 +209,16 @@ const Career = () => {
             Apply Today
           </button>
         </div>
+        <PopupFormModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          pageContext={pageContext}
+          formConfig={careerFormConfig.fields} // must be .fields
+          onSubmitHandler={(data) => {
+            console.log("Submitted from homepage", data);
+            // Add submit logic like Google Sheets or API here
+          }}
+        />
       </section>
     </div>
   );
