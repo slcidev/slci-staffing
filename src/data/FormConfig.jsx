@@ -1,23 +1,10 @@
 import React from "react";
 
 
-export const contactFormConfig = {
-  formName: "Contact",
-  sheetName: "Contact",
-  fields: [
-    { name: "Name", placeholder:" Enter Your Full Name", label: "Your Name", type: "text", required: true },
-    { name: "Email", placeholder:"Enter Your Email",  label: "Email Address", type: "email", required: true },
-    { name: "Phone", placeholder:"Enter Your Mobile Number", label: "Phone Number", type: "tel", required: true },
-    { name: "Subject", placeholder:"Subject", label: "Subject", type: "text", required: true },
-    { name: "Message", placeholder:"Message", label: "Message", type: "textarea",  },
-  ],
-  submitButtonText: "Submit Now",
-  successMessage: "Message sent successfully!",
-  errorMessage: "Something went wrong. Please try again.",
-};
+
 export const popupFormConfig = {
   formName: "Popup Form",
-  sheetName: "PopupForm",
+   sheetName: "GeneralFormData ", 
   fields: [
     { name: "Name", placeholder:" Enter Your Full Name", label: "Your Name", type: "text", required: true },
     { name: "Email", placeholder:"Enter Your Email",  label: "Email Address", type: "email", required: true },
@@ -30,15 +17,14 @@ export const popupFormConfig = {
   errorMessage: "Something went wrong. Please try again.",
 }
 
-// 📁 src/data/CareerFormConfig.js
-// FormConfig.js
 
 export const generalApplicationForm = {
   title: "Apply for a Position",
+    sheetName: "CareerFormData", 
   description: "Let us know the role you're interested in. If it's not listed, choose 'Other'.",
   fields: [
     {
-      name: "role",
+      name: "Department",
       type: "selectWithOther", // custom type we'll handle
       placeholder: "Select a Role",
       options: [
@@ -51,13 +37,13 @@ export const generalApplicationForm = {
       validation: { required: "Please select or enter a role" },
     },
     {
-      name: "fullName",
+      name: "Full Name",
       placeholder: "Full Name",
       type: "text",
       validation: { required: "Full Name is required" },
     },
     {
-      name: "email",
+      name: "Email",
       placeholder: "Email",
       type: "email",
       validation: {
@@ -69,43 +55,44 @@ export const generalApplicationForm = {
       },
     },
     {
-      name: "phone",
+      name: "Phone",
       placeholder: "Phone Number",
       type: "text",
       validation: {},
     },
     {
-      name: "resume",
+      name: "Resume",
       placeholder: "Upload Resume (.pdf, .docx)",
       type: "file",
       accept: ".pdf,.doc,.docx",
       validation: { required: "Resume is required" },
     },
     {
-      name: "message",
+      name: "Message",
       placeholder: "Message (optional)",
       type: "textarea",
     },
   ],
 };
 
-export const jobApplicationForm = (role) => ({
-  title: `Apply for ${role}`,
+export const jobApplicationForm = (Department) => ({
+  title: `Apply for ${Department}`,
+    sheetName: "CareerFormData", 
   description: "Fill in your details to apply for this position.",
   fields: [
     {
-      name: "role",
+      name: "Department",
       type: "hidden",
-      defaultValue: role,
+      defaultValue: Department,
     },
     {
-      name: "fullName",
+      name: "Full Name",
       placeholder: "Full Name",
       type: "text",
       validation: { required: "Full Name is required" },
     },
     {
-      name: "email",
+      name: "Email",
       placeholder: "Email",
       type: "email",
       validation: {
@@ -117,20 +104,20 @@ export const jobApplicationForm = (role) => ({
       },
     },
     {
-      name: "phone",
+      name: "Phone",
       placeholder: "Phone Number",
       type: "text",
       validation: {},
     },
     {
-      name: "resume",
+      name: "Resume",
       placeholder: "Upload Resume (.pdf, .docx)",
       type: "file",
       accept: ".pdf,.doc,.docx",
       validation: { required: "Resume is required" },
     },
     {
-      name: "message",
+      name: "Message",
       placeholder: "Message (optional)",
       type: "textarea",
     },
@@ -138,60 +125,17 @@ export const jobApplicationForm = (role) => ({
 });
 
 
-/* export const careerFormConfig = {
-  title: "Apply for a Position",
-  description: "Fill in your details and upload your resume. We'll get back to you soon.",
+/* export const contactFormConfig = {
+  formName: "Contact",
+    sheetName: "GeneralFormData ", 
   fields: [
-    {
-      name: "fullName",
-      placeholder: "Full Name",
-      type: "text",
-      validation: { required: "Full Name is required" },
-    },
-    {
-      name: "email",
-      placeholder: "Email Address",
-      type: "email",
-      validation: {
-        required: "Email is required",
-        pattern: {
-          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-          message: "Enter a valid email address",
-        },
-      },
-    },
-    {
-      name: "position",
-      placeholder: "Position Applying For",
-      type: "text",
-      validation: { required: "Please specify the position" },
-    },
-    {
-      name: "resume",
-      placeholder: "Upload Resume (PDF/DOC)",
-      type: "file",
-      accept: ".pdf,.doc,.docx",
-      validation: { required: "Resume upload is required" },
-    },
-    {
-      name: "coverLetter",
-      placeholder: "Upload Cover Letter (Optional)",
-      type: "file",
-      accept: ".pdf,.doc,.docx",
-      validation: {},
-    },
-    {
-      name: "notes",
-      placeholder: "Additional Notes (Optional)",
-      type: "textarea",
-      validation: {},
-    },
+    { name: "Name", placeholder:" Enter Your Full Name", label: "Your Name", type: "text", required: true },
+    { name: "Email", placeholder:"Enter Your Email",  label: "Email Address", type: "email", required: true },
+    { name: "Phone", placeholder:"Enter Your Mobile Number", label: "Phone Number", type: "tel", required: true },
+    { name: "Subject", placeholder:"Subject", label: "Subject", type: "text", required: true },
+    { name: "Message", placeholder:"Message", label: "Message", type: "textarea",  },
   ],
+  submitButtonText: "Submit Now",
+  successMessage: "Message sent successfully!",
+  errorMessage: "Something went wrong. Please try again.",
 }; */
-
-
-export const getPageFormConfig = (pageName) => [
-  { name: "name", placeholder: `Name for ${pageName}`, validation: { required: "Required" } },
-  { name: "email", type: "email", placeholder: "Email", validation: { required: "Required" } },
-  { name: "message", type: "textarea", placeholder: "Message", validation: { required: "Required" } },
-];

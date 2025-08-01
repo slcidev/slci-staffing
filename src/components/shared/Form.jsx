@@ -59,15 +59,34 @@ const Form = ({
     >
       {formTitle && <h3 className="text-xl font-bold mb-4">{formTitle}</h3>}
 
-      <div className={layout === "grid" ? "grid md:grid-cols-2 gap-4" : "space-y-4"}>
+      <div
+        className={
+          layout === "grid" ? "grid md:grid-cols-2 gap-4" : "space-y-4"
+        }
+      >
         {formConfig.map((field) => {
           const isSelectWithOther = field.type === "selectWithOther";
           const selectedValue = watch(field.name);
 
+          // ✅ HANDLE HIDDEN FIELDS
+          if (field.type === "hidden") {
+            return (
+              <input
+                key={field.name}
+                type="hidden"
+                value={field.defaultValue || ""}
+                {...register(field.name)}
+              />
+            );
+          }
+
           return (
             <div key={field.name} className="flex flex-col">
               {showLabels && (
-                <label htmlFor={field.name} className="text-sm font-medium mb-1">
+                <label
+                  htmlFor={field.name}
+                  className="text-sm font-medium mb-1"
+                >
                   {field.label || field.placeholder}
                 </label>
               )}
@@ -147,11 +166,13 @@ const Form = ({
                   {errors[field.name]?.message}
                 </span>
               )}
-              {field.name === "role" && selectedValue === "Other" && errors.otherRole && (
-                <span className="text-sm text-red-600 mt-1">
-                  {errors.otherRole?.message}
-                </span>
-              )}
+              {field.name === "role" &&
+                selectedValue === "Other" &&
+                errors.otherRole && (
+                  <span className="text-sm text-red-600 mt-1">
+                    {errors.otherRole?.message}
+                  </span>
+                )}
             </div>
           );
         })}
@@ -168,9 +189,6 @@ const Form = ({
 };
 
 export default Form;
-
-
-
 
 /* 
 import React, { useEffect } from "react";

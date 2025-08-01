@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../components/shared/Form";
 import ContactInfo from "../components/shared/ContactInfo";
-import { contactFormConfig } from "../data/FormConfig";
+import {  popupFormConfig } from "../data/FormConfig";
 // import { SubmitToGoogleSheet } from "../utils/SubmitToGoogleSheet";
 // import { submitToSheet } from "../utils/submitToGoogleSheet";
 
@@ -30,8 +30,8 @@ const Contact = () => {
             {/* Form */}
             <div className="">
               <Form
-                formConfig={contactFormConfig.fields}
-                submitLabel={contactFormConfig.submitButtonText}
+                formConfig={popupFormConfig.fields}
+                submitLabel={popupFormConfig.submitButtonText}
                /*  onSubmitHandler={(data) =>
                   SubmitToGoogleSheet({
                     ...data,

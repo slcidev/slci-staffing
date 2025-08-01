@@ -1,14 +1,21 @@
-/* export async function SubmitToGoogleSheet(data) {
-  const endpoint = "https://script.google.com/macros/s/AKfycbxAdhXb-eXXw9kD9I0oTeMGzjuIblMNPydTZnuQUy6XpAR_oQB30xYtLwGmis9Cgfyx/exec"
+// utils/submitToGoogleSheet.js
+export async function SubmitToGoogleSheet(data, sheetName = "FormResponses") {
+  const endpoint = "https://script.google.com/macros/s/AKfycbx-BXSoedpkGpAssHTBgric2UE-PXhK2XGrk-WGVLMCCpIsYH4u5Wvi5MUnnEBTJSIQ/exec";
+
   const formData = new FormData();
+
+  // Include all data
   Object.entries(data).forEach(([key, value]) => {
     formData.append(key, value);
   });
 
+  // Optionally add the sheet name (depends on your Google Script)
+  formData.append("sheetName", sheetName);
+
   const response = await fetch(endpoint, {
     method: "POST",
     body: formData,
-     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    // ⚠️ Do not manually set Content-Type for FormData!
   });
 
   const text = await response.text();
@@ -18,7 +25,8 @@
   }
 
   return text;
-} */
+}
+
 
 /* export async function SubmitToGoogleSheet(data) {
   const scriptURL = "https://script.google.com/macros/s/AKfycbxAdhXb-eXXw9kD9I0oTeMGzjuIblMNPydTZnuQUy6XpAR_oQB30xYtLwGmis9Cgfyx/exec"; // 

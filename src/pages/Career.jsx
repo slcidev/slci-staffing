@@ -7,6 +7,8 @@ import CtaButton from "../components/shared/CtaButton";
 import FeatureCard from "../components/shared/FeatureCard";
 import { generalApplicationForm, jobApplicationForm } from "../data/FormConfig";
 import PopupFormModal from "../components/shared/PopupFormModal";
+import { SubmitToGoogleSheet } from "../utils/SubmitToGoogleSheet";
+import toast from "react-hot-toast";
 
 const Career = () => {
   // const [pageContext, setPageContext] = useState("/");
@@ -14,15 +16,14 @@ const Career = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openGeneralForm = () => {
-  setFormConfig({
-    ...generalApplicationForm,
-    fields: generalApplicationForm.fields.map((field) =>
-      field.name === "role" ? { ...field, showOtherField: true } : field
-    ),
-  });
-  setIsOpen(true);
-};
-
+    setFormConfig({
+      ...generalApplicationForm,
+      fields: generalApplicationForm.fields.map((field) =>
+        field.name === "Department" ? { ...field, showOtherField: true } : field
+      ),
+    });
+    setIsOpen(true);
+  };
 
   const openJobForm = (role) => {
     setFormConfig(jobApplicationForm(role));
@@ -233,10 +234,19 @@ const Career = () => {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         pageContext="career"
-        formConfig={formConfig?.fields || []} // must be .fields
+        formConfig={formConfig?.fields || []}
         onSubmitHandler={(data) => {
-          console.log("Submitted from homepage", data);
-          // Add submit logic like Google Sheets or API here
+          const sheetName = formConfig?.sheetName || "GeneralFormData";
+
+          // Only add description if it's not CareerFormData
+          const payload =
+            sheetName === "CareerFormData"
+              ? data
+              : { ...data, description: pageContext || "No page context" };
+
+          SubmitToGoogleSheet(payload, sheetName)
+            .then(() => toast.success("Submitted successfully"))
+            .catch((err) => toast.error(err.message));
         }}
       />
     </div>
