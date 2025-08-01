@@ -31,7 +31,114 @@ export const popupFormConfig = {
 }
 
 // 📁 src/data/CareerFormConfig.js
-export const careerFormConfig = {
+// FormConfig.js
+
+export const generalApplicationForm = {
+  title: "Apply for a Position",
+  description: "Let us know the role you're interested in. If it's not listed, choose 'Other'.",
+  fields: [
+    {
+      name: "role",
+      type: "selectWithOther", // custom type we'll handle
+      placeholder: "Select a Role",
+      options: [
+        "Full Stack Developer",
+        "UX/UI Designer",
+        "DevOps Engineer",
+        "Digital Marketing Specialist",
+        "Other"
+      ],
+      validation: { required: "Please select or enter a role" },
+    },
+    {
+      name: "fullName",
+      placeholder: "Full Name",
+      type: "text",
+      validation: { required: "Full Name is required" },
+    },
+    {
+      name: "email",
+      placeholder: "Email",
+      type: "email",
+      validation: {
+        required: "Email is required",
+        pattern: {
+          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          message: "Invalid email",
+        },
+      },
+    },
+    {
+      name: "phone",
+      placeholder: "Phone Number",
+      type: "text",
+      validation: {},
+    },
+    {
+      name: "resume",
+      placeholder: "Upload Resume (.pdf, .docx)",
+      type: "file",
+      accept: ".pdf,.doc,.docx",
+      validation: { required: "Resume is required" },
+    },
+    {
+      name: "message",
+      placeholder: "Message (optional)",
+      type: "textarea",
+    },
+  ],
+};
+
+export const jobApplicationForm = (role) => ({
+  title: `Apply for ${role}`,
+  description: "Fill in your details to apply for this position.",
+  fields: [
+    {
+      name: "role",
+      type: "hidden",
+      defaultValue: role,
+    },
+    {
+      name: "fullName",
+      placeholder: "Full Name",
+      type: "text",
+      validation: { required: "Full Name is required" },
+    },
+    {
+      name: "email",
+      placeholder: "Email",
+      type: "email",
+      validation: {
+        required: "Email is required",
+        pattern: {
+          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          message: "Invalid email",
+        },
+      },
+    },
+    {
+      name: "phone",
+      placeholder: "Phone Number",
+      type: "text",
+      validation: {},
+    },
+    {
+      name: "resume",
+      placeholder: "Upload Resume (.pdf, .docx)",
+      type: "file",
+      accept: ".pdf,.doc,.docx",
+      validation: { required: "Resume is required" },
+    },
+    {
+      name: "message",
+      placeholder: "Message (optional)",
+      type: "textarea",
+    },
+  ],
+});
+
+
+/* export const careerFormConfig = {
   title: "Apply for a Position",
   description: "Fill in your details and upload your resume. We'll get back to you soon.",
   fields: [
@@ -80,7 +187,7 @@ export const careerFormConfig = {
       validation: {},
     },
   ],
-};
+}; */
 
 
 export const getPageFormConfig = (pageName) => [

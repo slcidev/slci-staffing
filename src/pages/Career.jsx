@@ -5,17 +5,30 @@ import ServiceHero from "../components/service/sections/ServiceHero";
 import { positions, benefits } from "../data/CareerData";
 import CtaButton from "../components/shared/CtaButton";
 import FeatureCard from "../components/shared/FeatureCard";
-import { careerFormConfig,} from "../data/FormConfig";
+import { generalApplicationForm, jobApplicationForm } from "../data/FormConfig";
 import PopupFormModal from "../components/shared/PopupFormModal";
 
 const Career = () => {
+  // const [pageContext, setPageContext] = useState("/");
+  const [formConfig, setFormConfig] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [pageContext, setPageContext] = useState("/");
 
-  const openPopupForm = () => {
-    setPageContext("Career page ");
+  const openGeneralForm = () => {
+  setFormConfig({
+    ...generalApplicationForm,
+    fields: generalApplicationForm.fields.map((field) =>
+      field.name === "role" ? { ...field, showOtherField: true } : field
+    ),
+  });
+  setIsOpen(true);
+};
+
+
+  const openJobForm = (role) => {
+    setFormConfig(jobApplicationForm(role));
     setIsOpen(true);
   };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -26,6 +39,7 @@ const Career = () => {
         subtitle="Simplify your salary processing with automation, compliance, and peace of mind."
         image="https://picsum.photos/id/5/500/300"
         ctaLabel="View Open Positions"
+        onCtaClick={openGeneralForm}
       />
 
       {/*    <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-emerald-700 text-white overflow-hidden">
@@ -158,7 +172,9 @@ const Career = () => {
                   </div>
 
                   <div className="mt-6 lg:mt-0 lg:ml-8">
-                    <CtaButton>Apply Now</CtaButton>
+                    <CtaButton onClick={() => openJobForm(position.title)}>
+                      Apply Now
+                    </CtaButton>
                   </div>
                 </div>
               </div>
@@ -174,7 +190,7 @@ const Career = () => {
                 We're always looking for talented individuals. Send us your
                 resume and let us know how you'd like to contribute.
               </p>
-              <CtaButton>Send Resume</CtaButton>
+              <CtaButton onClick={openGeneralForm}>Send Resume</CtaButton>
             </div>
           </div>
         </div>
@@ -205,21 +221,24 @@ const Career = () => {
             Join a team that values innovation, collaboration, and personal
             growth. Your next career adventure starts here.
           </p>
-          <button className=" cursor-pointer bg-white hover:shadow-2xl text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-teal-50 transition-all">
+          <button
+            onClick={openGeneralForm}
+            className=" cursor-pointer bg-white hover:shadow-2xl text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-teal-50 transition-all"
+          >
             Apply Today
           </button>
         </div>
-        <PopupFormModal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          pageContext={pageContext}
-          formConfig={careerFormConfig.fields} // must be .fields
-          onSubmitHandler={(data) => {
-            console.log("Submitted from homepage", data);
-            // Add submit logic like Google Sheets or API here
-          }}
-        />
       </section>
+      <PopupFormModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        pageContext="career"
+        formConfig={formConfig?.fields || []} // must be .fields
+        onSubmitHandler={(data) => {
+          console.log("Submitted from homepage", data);
+          // Add submit logic like Google Sheets or API here
+        }}
+      />
     </div>
   );
 };
