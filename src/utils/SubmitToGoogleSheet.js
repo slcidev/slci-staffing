@@ -1,21 +1,24 @@
-// utils/submitToGoogleSheet.js
 export async function SubmitToGoogleSheet(data, sheetName = "FormResponses") {
   const endpoint = "https://script.google.com/macros/s/AKfycbx-BXSoedpkGpAssHTBgric2UE-PXhK2XGrk-WGVLMCCpIsYH4u5Wvi5MUnnEBTJSIQ/exec";
 
   const formData = new FormData();
 
-  // Include all data
+  // Append each field to formData correctly
   Object.entries(data).forEach(([key, value]) => {
-    formData.append(key, value);
+    if (value instanceof File) {
+      formData.append(key, value, value.name);
+    } else {
+      formData.append(key, value);
+    }
   });
 
-  // Optionally add the sheet name (depends on your Google Script)
+  // Always send the target sheet name
   formData.append("sheetName", sheetName);
 
   const response = await fetch(endpoint, {
     method: "POST",
     body: formData,
-    // ⚠️ Do not manually set Content-Type for FormData!
+    // DO NOT set Content-Type manually — browser will set it correctly
   });
 
   const text = await response.text();
