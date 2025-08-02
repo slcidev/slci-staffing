@@ -67,15 +67,7 @@ const PopupFormModal = ({
 
   return (
     <>
-      {!isOpen && hasOpened && !isControlled && (
-        <button
-          onClick={openModal}
-          className="fixed bottom-5 right-5 px-4 py-2 rounded-full bg-blue-600 text-white shadow-lg z-50"
-        >
-          Open Form
-        </button>
-      )}
-
+     
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={closeModal}>
           <TransitionChild
