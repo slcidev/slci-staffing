@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
                 Why <HighlightText text="Choose" /> <HighlightText text="Us" />
               </>
             }
-            subtitle="   Discover what makes Shakti Legal Compliance your trusted partner for compliance management in India."
+            subtitle="  Decades of trust, transparent delivery, and transformative results for businesses across India’s evolving legal landscape."
             headingLevel="h2"
           />
         </div>

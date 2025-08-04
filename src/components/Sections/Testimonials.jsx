@@ -15,17 +15,21 @@ import { testimonial } from "../../data/TestimonialData";
 const Testimonials = () => {
   return (
        <section id="services" className="py-20 bg-gradient-to-br from-slate-50 to-teal-50">
-    <div className="max-w-7xl mx-auto py-12 px-4 ">
+    <div className="max-w-7xl mx-auto py-12 px-4 gap-2 ">
       <SectionHeading
         title={
           <>
             What Our <HighlightText text="Clients" />{" "}
             <HighlightText text="Say" />
+            
           </>
         }
-        subtitle=""
+        subtitle="Our client success stories speak for themselves. Here's how we've made a difference."
         headingLevel="h2"
       />
+      <div className="mt-15">
+
+      
         <Swiper
           modules={[Autoplay]}
           loop={true}
@@ -43,6 +47,7 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
    
     </div>
     </section>

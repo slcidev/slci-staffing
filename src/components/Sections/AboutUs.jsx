@@ -6,7 +6,7 @@ import CtaButton from "../shared/CtaButton";
 import HighlightText from "../shared/HighlightText";
 import FeatureGrid from "../shared/FeatureGrid";
 import { stats, features } from "../../data/AboutPageData";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -20,8 +20,7 @@ const AboutUs = () => {
                 <HighlightText text="Company" />
               </>
             }
-            subtitle="   We are a forward-thinking technology company dedicated to delivering exceptional digital solutions 
-            that empower businesses to thrive in the modern landscape."
+            subtitle="Leading compliance partner since 1986, helping Indian businesses navigate complex labour laws with confidence."
             headingLevel="h2"
           />
         </div>
@@ -31,8 +30,8 @@ const AboutUs = () => {
             <SectionHeading
               title="Our Mission"
               subtitle={[
-                "To bridge the gap between innovative technology and practical business solutions. We believe in creating digital experiences that not only meet today's needs but anticipate tomorrow's challenges.",
-                "Our team of experts combines creativity with technical excellence to deliver solutions that drive measurable results and sustainable growth for our clients.",
+                "Our mission is to guide organizations through the dynamic world of Labour Laws and compliance with ethical, strategic, and cost-effective solutions. We strive to decode the legal ecosystem for our clients, helping them understand, implement, and stay ahead of statutory requirements.",
+                "By embedding compliance at the heart of operations, we ensure clients not only meet legal obligations but foster a culture of accountability, governance, and long-term sustainability.",
               ]}
               headingLevel="h3"
             />

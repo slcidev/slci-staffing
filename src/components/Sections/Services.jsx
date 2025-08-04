@@ -7,13 +7,16 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import ServiceCard from "../shared/ServiceCard";
-import {services} from "../../data/ServiceData";
+import { services } from "../../data/ServiceData";
 import SectionHeading from "../shared/SectionHeading";
 import HighlightText from "../shared/HighlightText";
 
 const ServicesSlider = () => {
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-br from-blue-50 to-teal-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <SectionHeading
@@ -22,7 +25,7 @@ const ServicesSlider = () => {
                 Our <HighlightText text="Services" />
               </>
             }
-            subtitle="We offer a comprehensive range of digital services designed to help your business succeed in today's competitive landscape."
+            subtitle="End-to-end labour compliance solutions that reduce risk, improve processes, and build long-term operational integrity."
             headingLevel="h2"
           />
         </div>
@@ -58,7 +61,6 @@ const ServicesSlider = () => {
                 to={`/services/${service.title
                   .toLowerCase()
                   .replace(/ /g, "-")}`}
-               
               >
                 <ServiceCard {...service} />
               </Link>

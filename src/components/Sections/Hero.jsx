@@ -5,7 +5,7 @@ import CtaButton from "../shared/CtaButton";
 import HighlightText from "../shared/HighlightText";
 import { motion } from "framer-motion";
 
-export default function Hero({onCtaClick ,title}) {
+export default function Hero({ onCtaClick, title }) {
   return (
     <section
       id="home"
@@ -25,16 +25,16 @@ export default function Hero({onCtaClick ,title}) {
             <SectionHeading
               title={
                 <>
-                  Transforming Ideas Into <HighlightText text="Digital " />
-                  <HighlightText text="Reality" />
+                  Empowering <HighlightText text="Compliance" />, Enabling 
+                  <HighlightText text="Growth" />
                 </>
               }
-              subtitle="We craft innovative solutions that drive growth and success for businesses worldwide. Experience the power of cutting-edge technology with our expert team."
+              subtitle="At SLCI, we don’t just deliver compliance—we drive growth by aligning your business with robust Labour Laws and GRC frameworks. Trusted since 1986."
               headingLevel="h1"
             />
 
             <div className="flex justify-center sm:justify-start gap-4">
-           {/*    <CtaButton
+              {/*    <CtaButton
               variant="primary" icon={<ArrowRight size={20} />}
                 onClick={() => {
                   if (typeof onCtaClick === "function") {
@@ -48,8 +48,10 @@ export default function Hero({onCtaClick ,title}) {
                Get Started
               </CtaButton> */}
 
-              <CtaButton variant="primary" icon={<ArrowRight size={20} />}
-               onClick={() => {
+              <CtaButton
+                variant="primary"
+                icon={<ArrowRight size={20} />}
+                onClick={() => {
                   if (typeof onCtaClick === "function") {
                     onCtaClick(title); // or slug if you prefer
                   } else {
@@ -57,7 +59,7 @@ export default function Hero({onCtaClick ,title}) {
                   }
                 }}
               >
-                Get Started
+                Let’s Connect
               </CtaButton>
 
               <CtaButton variant="secondary" icon={<Play size={20} />}>

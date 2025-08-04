@@ -35,8 +35,8 @@ const Career = () => {
       {/* Hero Section */}
 
       <ServiceHero
-        title="Join Our Amazing Team "
-        highlight={["Amazing", "Team"]}
+        title="Join Our Mission to Make Compliance Count "
+        highlight={["Mission", "Compliance Count"]}
         subtitle="Simplify your salary processing with automation, compliance, and peace of mind."
         image="https://picsum.photos/id/5/500/300"
         ctaLabel="View Open Positions"

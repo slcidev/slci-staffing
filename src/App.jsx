@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import ScrollToTop from "./components/ScrollTotop";
 import { popupFormConfig } from "./data/FormConfig";
 import PopupFormModal from "./components/shared/PopupFormModal";
+import Chatbot from "./components/Chatbot";
 console.log("PopupFormModal", PopupFormModal);
 
 
@@ -38,6 +39,7 @@ const App = () => {
         formConfig={popupFormConfig.fields}
         onSubmitHandler={handlePopupFormSubmit}
       />
+      <Chatbot/>
     </BrowserRouter>
   );
 };

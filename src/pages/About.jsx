@@ -14,9 +14,11 @@ const About = () => {
       {/* Hero Section */}
 
       <ServiceHero
-        title="About SLCI "
-        highlight={["SLCI"]}
-        subtitle="Simplify your salary processing with automation, compliance, and peace of mind."
+        title="Our Journey "
+        highlight={[" Journey"]}
+        subtitle="Founded in 1986 as Shakti Associates, SLCI (Shakti Legal & Compliance India) was born out of a vision to make labour law compliance simpler, smarter, and more strategic. Under the leadership of Mr. S.K. Sharma, Advocate, SLCI has grown into one of India’s most trusted Labour Law advisory firms—bridging the gap between policy and practice with clarity, ethics, and deep domain expertise..
+
+"
         image="https://picsum.photos/id/5/500/300"
         ctaLabel="Get Started"
       />
@@ -28,8 +30,10 @@ const About = () => {
               <SectionHeading
                 title="Our Mission"
                 subtitle={[
-                  "To bridge the gap between innovative technology and practical business solutions. We believe in creating digital experiences that not only meet today's needs but anticipate tomorrow's challenges.",
-                  "Our team of experts combines creativity with technical excellence to deliver solutions that drive measurable results and sustainable growth for our clients.",
+                  "Our mission is to guide organizations through the dynamic world of Labour Laws and compliance with ethical, strategic, and cost-effective solutions. We strive to decode the legal ecosystem for our clients, helping them understand, implement, and stay ahead of statutory requirements.",
+                  "By embedding compliance at the heart of operations, we ensure clients not only meet legal obligations but foster a culture of accountability, governance, and long-term sustainability.",
+                  /*   "To bridge the gap between innovative technology and practical business solutions. We believe in creating digital experiences that not only meet today's needs but anticipate tomorrow's challenges.",
+                  "Our team of experts combines creativity with technical excellence to deliver solutions that drive measurable results and sustainable growth for our clients.", */
                 ]}
                 headingLevel="h3"
               />

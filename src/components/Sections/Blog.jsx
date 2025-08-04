@@ -53,7 +53,7 @@ export default function Blog() {
                 Latest <HighlightText text="Insights" />
               </>
             }
-            subtitle="  Stay updated with the latest trends, tips, and insights from our team of experts."
+            subtitle=" Explore timely articles, compliance tips, and legal updates to stay ahead of regulatory changes and risks."
             headingLevel="h2"
           />
         
