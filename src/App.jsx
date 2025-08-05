@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollTotop";
 import { popupFormConfig } from "./data/FormConfig";
 import PopupFormModal from "./components/shared/PopupFormModal";
 import Chatbot from "./components/Chatbot";
+import PageLayout from "./components/PageLayout";
 console.log("PopupFormModal", PopupFormModal);
 
 
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Toaster position="top-center" reverseOrder={false} />
+     <PageLayout>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
@@ -34,12 +36,13 @@ const App = () => {
           <Route path="Contact" element={<Contact />} />
         </Route>
       </Routes>
+      <Chatbot/>
+     </PageLayout>
       <ScrollToTop />
       <PopupFormModal
         formConfig={popupFormConfig.fields}
         onSubmitHandler={handlePopupFormSubmit}
       />
-      <Chatbot/>
     </BrowserRouter>
   );
 };
