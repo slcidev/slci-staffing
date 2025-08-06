@@ -8,17 +8,19 @@ export const SOCIAL_LINKS = [
 ];
 
  export const QUICK_LINKS = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#blog", label: "Blog" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
- export const SERVICE_LINKS = [
-  { href: "#", label: "Web Development" },
-  { href: "#", label: "Mobile Apps" },
-  { href: "#", label: "Digital Marketing" },
-  { href: "#", label: "Cybersecurity" },
-  { href: "#", label: "Support" },
+export const SERVICE_LINKS = [
+  { href: "/services/compliance-risk-review", label: "Compliance Risk Review" },
+  { href: "/services/partner-compliance-solutions", label: "Partner Compliance Solutions" },
+  { href: "/services/ehs-compliance-oversight", label: "EHS Compliance Oversight" },
+  { href: "/services/unit-compliance", label: "Unit Compliance" },
+  { href: "/services/mining-regulation-support", label: "Mining Regulation Support" },
+  { href: "/services/salary-compliance-assist", label: "Salary Compliance Assist" },
+  { href: "/services/flexible-workforce-solutions", label: "Flexible Workforce Solutions" },
+  { href: "/services/industrial-compliance-services", label: "Industrial Compliance Services" },
+  { href: "/services/employee-payroll-solutions", label: "Employee Payroll Solutions" },
 ];

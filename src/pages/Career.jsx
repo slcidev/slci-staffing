@@ -9,6 +9,8 @@ import { generalApplicationForm, jobApplicationForm } from "../data/FormConfig";
 import PopupFormModal from "../components/shared/PopupFormModal";
 import { SubmitToGoogleSheet } from "../utils/SubmitToGoogleSheet";
 import toast from "react-hot-toast";
+// import CareerImg from "../assets/img/career.jpg"
+import CareerImg from "../assets/img/career.png"
 
 const Career = () => {
   // const [pageContext, setPageContext] = useState("/");
@@ -38,7 +40,7 @@ const Career = () => {
         title="Join Our Mission to Make Compliance Count "
         highlight={["Mission", "Compliance Count"]}
         subtitle="Simplify your salary processing with automation, compliance, and peace of mind."
-        image="https://picsum.photos/id/5/500/300"
+        image={CareerImg}
         ctaLabel="View Open Positions"
         onCtaClick={openGeneralForm}
       />

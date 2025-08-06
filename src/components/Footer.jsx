@@ -48,7 +48,7 @@ const Footer = () => {
               {QUICK_LINKS.map(({ href, label }, i) => (
                 <Link
                   key={i}
-                  href={href}
+                  to={href}
                   className="block text-slate-300 hover:text-blue-400 transition-colors duration-300"
                 >
                   {label}
@@ -63,7 +63,7 @@ const Footer = () => {
               {SERVICE_LINKS.map(({ href, label }, i) => (
                 <Link
                   key={i}
-                  href={href}
+                  to={href}
                   className="block text-slate-300 hover:text-blue-400 transition-colors duration-300"
                 >
                   {label}

@@ -31,6 +31,17 @@ import {
   FaFileAlt,
 } from "react-icons/fa";
 
+import ComplianceRisk from "../assets/svg/service-image/compliance-banner-svg.svg"
+import Vendor from "../assets/svg/service-image/vendor-banner-svg.svg"     
+import EHS from "../assets/svg/service-image/ehs-banner.svg"     
+import Establishment from "../assets/svg/service-image/establishment-compliances-banner-svg.svg"     
+import Factory from "../assets/svg/service-image/factory-banner-svg.svg"     
+import Mining from "../assets/svg/service-image/mining-image-svg.svg"     
+import Payroll from "../assets/svg/service-image/payroll-image-svg.svg"     
+import PayrollCompliance from "../assets/svg/service-image/payroll-compliance-banner-svg.svg"     
+import Staff from "../assets/svg/service-image/staff-banner-svg.svg"     
+                              
+
 export const services = [
   {
     icon: FaShieldAlt,
@@ -149,7 +160,7 @@ export const ServiceDetails = {
       highlight: ["Payroll", "Risk", "Compliance"],
       subtitle:
         "Automate salary compliance and reduce legal risks with expert-backed payroll and labour audits.",
-      image: "https://picsum.photos/id/5/500/300",
+      image:` ${ComplianceRisk}`,
       ctaLabel: "Get Started",
     },
 
@@ -249,10 +260,10 @@ export const ServiceDetails = {
   "partner-compliance-solutions": {
     hero: {
       title: "Partner Compliance Solutions",
-      highlight: ["Vendors", "Third-Party", "Contractors"],
+      highlight: ["Solutions"],
       subtitle:
         "Ensure your partners and contractors meet all legal obligations under Indian labour laws.",
-      image: "https://picsum.photos/id/10/500/300",
+      image: `${Vendor}`,
       ctaLabel: "Explore Now",
     },
 
@@ -342,7 +353,7 @@ export const ServiceDetails = {
       highlight: ["Environment", "Health", "Safety"],
       subtitle:
         "Stay inspection-ready and reduce EHS risks with proactive audits, documentation, and legal adherence.",
-      image: "https://picsum.photos/id/20/500/300",
+    image: `${EHS}`,
       ctaLabel: "Ensure Compliance",
     },
 
@@ -432,7 +443,7 @@ export const ServiceDetails = {
       highlight: ["Factory", "Shop", "Establishment"],
       subtitle:
         "Ensure your unit meets all statutory obligations under state and central labour laws.",
-      image: "https://picsum.photos/id/25/500/300",
+      image: `${Establishment}`,
       ctaLabel: "Check Your Compliance",
     },
 
@@ -522,7 +533,7 @@ export const ServiceDetails = {
       highlight: ["Mines Act", "Labour Safety", "Compliance"],
       subtitle:
         "Stay compliant with mining laws and labour safety codes for safe, legal, and sustainable operations.",
-      image: "https://picsum.photos/id/30/500/300",
+      image:`${Mining}`,
       ctaLabel: "Get Expert Help",
     },
 
@@ -612,7 +623,7 @@ export const ServiceDetails = {
       highlight: ["Wages", "Audit", "Deductions"],
       subtitle:
         "Ensure accurate salary disbursement and statutory deductions in full alignment with labour laws.",
-      image: "https://picsum.photos/id/35/500/300",
+      image: `${PayrollCompliance}`,
       ctaLabel: "Audit Your Payroll",
     },
 
@@ -703,7 +714,7 @@ export const ServiceDetails = {
       highlight: ["Contract", "Gig", "Outsourcing"],
       subtitle:
         "Manage temporary, gig, and outsourced workers compliantly across industries and geographies.",
-      image: "https://picsum.photos/id/40/500/300",
+      image: `${Staff}`,
       ctaLabel: "Streamline Your Workforce",
     },
 
@@ -793,7 +804,7 @@ export const ServiceDetails = {
       highlight: ["Factories", "Labour", "Regulations"],
       subtitle:
         "Achieve end-to-end compliance for factories and industrial units under central and state labour laws.",
-      image: "https://picsum.photos/id/45/500/300",
+      image: `${Factory}`,
       ctaLabel: "Schedule Compliance Review",
     },
 
@@ -883,7 +894,7 @@ export const ServiceDetails = {
       highlight: ["Salary", "PF/ESI", "Automation"],
       subtitle:
         "Seamless payroll processing that ensures accurate salaries, deductions, and legal compliance.",
-      image: "https://picsum.photos/id/50/500/300",
+      image: `${Payroll}`,
       ctaLabel: "Get Payroll Support",
     },
 
